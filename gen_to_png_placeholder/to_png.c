@@ -4,7 +4,7 @@
 
 #include <png.h>
 
-int x, y;
+int i, j;
 
 int width, height;
 png_byte color_type;
@@ -12,11 +12,10 @@ png_byte bit_depth;
 
 png_structp png_ptr;
 png_infop info_ptr;
-int number_of_passes;
 png_bytep * row_pointers;
 
 void write_png_file(char* file_name) {
-  FILE *fp = fopen(file_name, "wb");
+  FILE *fp = fopen(file_name, "w");
   if (!fp)
     printf("[write_png_file] File %s could not be opened for writing", file_name);
 
@@ -53,36 +52,34 @@ void write_png_file(char* file_name) {
 
   png_write_end(png_ptr, NULL);
 
-  for (y=0; y<height; y++)
-    free(row_pointers[y]);
+  for (j=0; j<height; j++)
+    free(row_pointers[j]);
   free(row_pointers);
 
   fclose(fp);
 }
 
-void process_file(void) {
-  width = 200;
-  height = 200;
+void process_file(int width, int height) {
   bit_depth = 8;
   color_type = PNG_COLOR_TYPE_GRAY;
-
-  number_of_passes = 1;
   row_pointers = (png_bytep*) malloc(sizeof(png_bytep) * height);
-  for (y=0; y<height; y++)
-    row_pointers[y] = (png_byte*) malloc(sizeof(png_byte) * width);
+  for (j=0; j<height; j++)
+    row_pointers[j] = (png_byte*) malloc(sizeof(png_byte) * width);
 
-  for (y=0; y<height; y++) {
-    png_byte* row = row_pointers[y];
-    for (x=0; x<width; x++) 
-      row[x] = (y+x)%2? 255 : 0;
+  for (j=0; j<height; j++) {
+    png_byte* row = row_pointers[j];
+    for (i=0; i<width; i++) 
+      row[i] = (i+j)%2? 255 : 0;
     
   }
 }
 
 
 int main(int argc, char **argv) {
-  process_file();
-  write_png_file("out1.png");
+	width = argc > 1 ? atoi(argv[1]):50;
+	height = argc > 2 ? atoi(argv[2]:50;
+	process_file(width,height);
+	write_png_file("gen.png");
 
-  return 0;
+	return 0;
 }
