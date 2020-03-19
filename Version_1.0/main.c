@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
    
     //sprawdzenie czy plik się otworzył
     if(in==NULL){
-        printf("Nie mogę otworzyc plik !!!\n");
+        printf("Nie mogę otworzyc pliku !!!\n");
         exit(0);
     }
     

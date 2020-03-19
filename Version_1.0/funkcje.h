@@ -20,6 +20,6 @@ void generuj_plik(int h,int wiersze,int kolumny,int array[][kolumny]);
 void generacja_cyklu(int w,int k,int t1[][k],int t2[][k],int n);
 void write_png_file(char* file_name,int w,int k);
 char* file_name(int h);
-void process_file(int w,int k);
+void process_file(int w,int k, int array[][k]);
 
 #endif /* funkcje_h */

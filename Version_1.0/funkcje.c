@@ -19,7 +19,6 @@ png_byte bit_depth;
 
 png_structp png_ptr;
 png_infop info_ptr;
-int number_of_passes;
 png_bytep * row_pointers;
 
 void write_png_file(char* file_name,int w,int k) {
@@ -154,30 +153,34 @@ char* file_name(int h){
         return nazwa_pliku;
 }
 
-//zapisuje w podanym pliku
-void process_file(int w,int k) {
+//zapisuje plansze do *.png
+void process_file(int w,int k,int array[][k]) {
   bit_depth = 8;
   color_type = PNG_COLOR_TYPE_GRAY;
 
-  number_of_passes = 1;
   row_pointers = (png_bytep*) malloc(sizeof(png_bytep) * w);
   for (y=0; y<w; y++)
     row_pointers[y] = (png_byte*) malloc(sizeof(png_byte) * k);
 
   for (y=0; y<w; y++) {
     png_byte* row = row_pointers[y];
-    for (x=0; x<k; x++) 
-      row[x] = (y+x)%2? 255 : 0;
-    
+    for (x=0; x<k; x++) {
+	   if(array[y][x] == 0) 
+      row[x] =   0;
+	   else
+		   row[x] = 255;
+    }
   }
+
 }
 
 void generacja_cyklu(int w,int k,int t1[][k],int t2[][k],int n){
-	char* pliczek;
+	char* file = malloc(25*sizeof(char));
     for(int h=0;h<n;h++){
+	file = file_name(h);
         generuj_jedna_plansze(w,k,t1,t2);
-        pliczek = file_name(h);
-	write_png_file(pliczek,w,k);
+	process_file(w,k,t1);
+	write_png_file(file,w,k);
         przepisz(w,k,t1,t2);
     }
 }
