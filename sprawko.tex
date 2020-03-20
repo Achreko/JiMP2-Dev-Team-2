@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\begin{huge}
+\begin{center}
+\textbf{Automat kom\'orkowy w j\k{e}zyku C}\\
+\end{center}
+\end{huge}
+
+\section{Wst\k{e}p}
+Automat komórkowy jest systemem składającym się z pojedynczych komórek sąsiadujących ze sobą. Każda komórka przyjmuje jeden ze skończonego zbioru stanów. Komórka zmienia swój stan na podstawie przyjętych założeń, opierających się na stanie komórek z nią sąsiadujących. Takim przykładem automatu komórkowego jest gra w życie. Jej zasady to:
+Jeśli żywa komórka ma 2 lub 3 żywych sąsiadów to pozostaje żywa, w przeciwnym wypadku umiera. Jeśli martwa komórka ma 3 żywych sąsiadów to ozywa, inaczej pozostaje martwa.
+W naszej grze wykorzystywane jest sąsiedztwo Moore’a, które zakłada sąsiedztwo 8 komórek wokół komórki badanej.
+
+
+\section{Program}
+
+W naszym projekcie przyjęliśmy, że przy wywoływaniu programu podawany jest plik o przykładowym wyglądzie:
+
+3 4\\
+1 0 0\\
+1 1 1\\
+1 1 1\\
+0 0 0\\
+\\
+Pierwsza liczba (3) to liczba kolumn, druga (4) rzędów –są to wymiary planszy. Dalej podajemy wygląd planszy składający się z 0 (komórki martwe) i 1 (komórki żywe). Cyfry w jednym rzędzie oddzielane są spacjami,a rzędy enterami.
+\\
+\\
+Program przechowuje planszę w tablicy dwuwymiarowej. Tworzone są 2 tablice. Jedna używana jest do wprowadzania zmian w generacji, a druga służy do porównywania sąsiedztwa komórki w celu wprowadzenia zmian w pierwszej tablicy.
+\\
+\\
+Kolejne etapy działania programu:\\
+1.	Pobranie danych z pliku i zapisanie ich do tablic.\\
+2.	Spytanie o ilość generacji i zapisanie tej danej.\\
+3.	Wygenerowanie nazwy pliku do generacji.\\
+4.	Porównanie komórek i wygenerowanie nowej planszy.
+
+
