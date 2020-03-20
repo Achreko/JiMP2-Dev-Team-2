@@ -1,7 +1,7 @@
 HEADERS = funkcje.h
-.PHONY: generuj clean
+.PHONY: Game_of_Life clean
  
-generuj:	main.o funkcje.o
+Game_of_Life:	main.o funkcje.o
 	cc   main.o funkcje.o -lpng -o Game_of_Life
 
 main.o:	main.c funkcje.c $(HEADERS)
