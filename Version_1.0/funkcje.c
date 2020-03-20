@@ -141,16 +141,16 @@ void generuj_jedna_plansze(int wiersze,int kolumny,int array[wiersze][kolumny],i
     }
 
 //generuje  nazwe pliku
-char* file_name(int h){
-	char* nazwa_pliku = malloc(25*sizeof(char));	
-        nazwa_pliku="Gen_";
+void file_name(char *t,int h){
+    strcpy(t,"Gen_");
+        
         char x[3];
         sprintf(x,"%d",h+1);
-        strcat(nazwa_pliku,x);
-        strcat(nazwa_pliku,".png");        
+        strcat(t,x);
+        strcat(t,".png");
              
              
-        return nazwa_pliku;
+        
 }
 
 //zapisuje plansze do *.png
@@ -158,9 +158,9 @@ void process_file(int w,int k,int array[][k]) {
   bit_depth = 8;
   color_type = PNG_COLOR_TYPE_GRAY;
 
-  row_pointers = (png_bytep*) malloc(sizeof(png_bytep) * w);
+  row_pointers = (png_bytep*) malloc(sizeof(png_bytep) *w);
   for (y=0; y<w; y++)
-    row_pointers[y] = (png_byte*) malloc(sizeof(png_byte) * k);
+    row_pointers[y] = (png_byte*) malloc(sizeof(png_byte) *k);
 
   for (y=0; y<w; y++) {
     png_byte* row = row_pointers[y];
@@ -175,9 +175,9 @@ void process_file(int w,int k,int array[][k]) {
 }
 
 void generacja_cyklu(int w,int k,int t1[][k],int t2[][k],int n){
-	char* file = malloc(25*sizeof(char));
+    char file[25];
     for(int h=0;h<n;h++){
-	file = file_name(h);
+        file_name(file,h);
         generuj_jedna_plansze(w,k,t1,t2);
 	process_file(w,k,t1);
 	write_png_file(file,w,k);
