@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.20)  20 MAR 2020 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.20)  20 MAR 2020 16:27
 entering extended mode
 **./JiMP2_Dev_Team_2.tex
 (JiMP2_Dev_Team_2.tex
@@ -62,9 +62,7 @@ y"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
- ("C:\Users\achre\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\latin2.def"
-File: latin2.def 2018/08/11 v1.3c Input encoding file
-))
+)
 ("C:\Users\achre\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
 d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
@@ -87,24 +85,33 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 34.
  [1
 
-{C:/Users/achre/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (JiMP2_Dev_
-Team_2.aux) ) 
+{C:/Users/achre/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] (JiMP2_
+Dev_Team_2.aux) ) 
 Here is how much of TeX's memory you used:
- 1290 strings out of 481556
- 18304 string characters out of 2913869
- 256510 words of memory out of 3000000
- 16586 multiletter control sequences out of 15000+200000
- 534957 words of font info for 28 fonts, out of 3000000 for 9000
+ 1315 strings out of 481556
+ 18478 string characters out of 2913869
+ 261551 words of memory out of 3000000
+ 16605 multiletter control sequences out of 15000+200000
+ 539628 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 25i,4n,27p,196b,155s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\achre\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen
-/ec/dpi600\ecrm1095.pk> <C:\Users\achre\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
-r/jknappen/ec/dpi600\ecbx2074.pk>
-Output written on JiMP2_Dev_Team_2.pdf (1 page, 9445 bytes).
+ 25i,4n,27p,609b,157s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\achre\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\ecti1095.pk> <C:\Users\achre\AppData\Local\MiKTeX\2.9\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\achre\AppData\Local\MiKTeX\2.9\
+fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\achre\AppData\Local\M
+iKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/achre/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+Output written on JiMP2_Dev_Team_2.pdf (2 pages, 57660 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
+ 139 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

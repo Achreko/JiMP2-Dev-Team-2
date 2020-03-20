@@ -1,5 +1,3 @@
-
-
 \documentclass[11pt]{article}
 \usepackage[polish]{babel}
 \usepackage[T1]{fontenc}
@@ -9,36 +7,52 @@
 
 \begin{huge}
 \begin{center}
-\textbf{Automat kom\'orkowy w j\k{e}zyku C}\\
+\textbf{Automat komórkowy w języku C}\\
 \end{center}
 \end{huge}
 
-\section{Wst\k{e}p}
+\section{Wstęp}
 Automat komórkowy jest systemem składającym się z pojedynczych komórek sąsiadujących ze sobą. Każda komórka przyjmuje jeden ze skończonego zbioru stanów. Komórka zmienia swój stan na podstawie przyjętych założeń, opierających się na stanie komórek z nią sąsiadujących. Takim przykładem automatu komórkowego jest gra w życie. Jej zasady to:
 Jeśli żywa komórka ma 2 lub 3 żywych sąsiadów to pozostaje żywa, w przeciwnym wypadku umiera. Jeśli martwa komórka ma 3 żywych sąsiadów to ozywa, inaczej pozostaje martwa.
 W naszej grze wykorzystywane jest sąsiedztwo Moore’a, które zakłada sąsiedztwo 8 komórek wokół komórki badanej.
 
 
-\section{Program}
+\section{Kompilacja kodu oraz wywołanie programu}
 
-W naszym projekcie przyjęliśmy, że przy wywoływaniu programu podawany jest plik o przykładowym wyglądzie:
+W naszym projekcie przyjęliśmy, że przy wywoływaniu programu podawany jest plik o przykładowym wyglądzie: 
+\\
+3 4 
+\\
+1 0 0
+\\
+1 1 1
+\\
+1 1 1
+\\
+0 0 0
+\\
+W pierwszym wierszu pliku mamy wymiary planszy. Liczba 3 jest liczbą kolumn, natomiast liczby 4 jest liczbą wierszy naszej tablicy. Następne wiersze to już sama plansza, w której 0 reprezentują komórki martwe, a 1 komórki żywe.Aby wywołać program otwieramy terminal, a następnie wchodzimy w folder, w którym program się znajduje. Do terminalu wpisujemy komendę \textit{make}, która korzystając z reguł zawartych w pliku Makefile kompiluje nasz kod oraz tworzy program $GameofLife$.Następnie wywołujemy program z wybranym przez nas plikiem, np.\\
+$./GameofLife$ $twojplikzdanymi.txt.$
+\\
+Program przechowuje planszę w tablicy dwuwymiarowej. Tworzone są 2 tablice. Jedna z nich używana jest do wprowadzania zmian w generacji, a druga służy do porównywania sąsiedztwa komórki w celu wprowadzenia zmian w pierwszej tablicy.
 
-3 4\\
-1 0 0\\
-1 1 1\\
-1 1 1\\
-0 0 0\\
+\section{Funkcjonowanie programu}
+
+Kolejne etapy działania programu:
 \\
-Pierwsza liczba (3) to liczba kolumn, druga (4) rzędów –są to wymiary planszy. Dalej podajemy wygląd planszy składający się z 0 (komórki martwe) i 1 (komórki żywe). Cyfry w jednym rzędzie oddzielane są spacjami,a rzędy enterami. Aby wywołać program otwieramy terminal, a nastepnie wchodzimy w folder, w którym program sie znajduje. Do teminala wpisujemy 'make' aby przekompilować program. Potem wpisujemy: ./Game_of_Life twoj_plik_z_danymi.txt. 
+1.	Pobranie danych z pliku i zapisanie ich do tablic.
 \\
+2.	Spytanie o ilość generacji i zapisanie tej danej.
 \\
-Program przechowuje planszę w tablicy dwuwymiarowej. Tworzone są 2 tablice. Jedna używana jest do wprowadzania zmian w generacji, a druga służy do porównywania sąsiedztwa komórki w celu wprowadzenia zmian w pierwszej tablicy.
+3.	Wygenerowanie nazwy pliku do generacji.
 \\
-\\
-Kolejne etapy działania programu:\\
-1.	Pobranie danych z pliku i zapisanie ich do tablic.\\
-2.	Spytanie o ilość generacji i zapisanie tej danej.\\
-3.	Wygenerowanie nazwy pliku do generacji.\\
 4.	Porównanie komórek i wygenerowanie nowej planszy.
+\\
+5.  Utworzenie pliku *.png z wygenerowaną uprzednio nazwą i zapisanie do niego planszy w postaci komórka żywa - kolor biały, komórka martwa - kolor czarny.
+\\
+Plik Makefile, o którym była mowa wcześniej zawiera 2 reguły, które kompilują kod zawarty w w plikach main.c oraz funkcje.c z flagą -lpng, aby dołączyć bibliotekę libpng. Korzystamy również z utworzonego przez nas pliku nagłówkowego "funkcje.h".
+\\
+Wynikiem działania programu są pliki nazwie Gen[x].png , gdzie x jest numerem generacji.
+
 
 \end{document}
