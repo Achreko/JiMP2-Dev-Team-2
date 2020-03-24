@@ -4,7 +4,7 @@
 
 #include <png.h>
 
-int i, j;
+int x, y;
 
 int width, height;
 png_byte color_type;
@@ -12,10 +12,11 @@ png_byte bit_depth;
 
 png_structp png_ptr;
 png_infop info_ptr;
+int number_of_passes;
 png_bytep * row_pointers;
 
 void write_png_file(char* file_name) {
-  FILE *fp = fopen(file_name, "w");
+  FILE *fp = fopen(file_name, "wb");
   if (!fp)
     printf("[write_png_file] File %s could not be opened for writing", file_name);
 
@@ -52,8 +53,8 @@ void write_png_file(char* file_name) {
 
   png_write_end(png_ptr, NULL);
 
-  for (j=0; j<height; j++)
-    free(row_pointers[j]);
+  for (y=0; y<height; y++)
+    free(row_pointers[y]);
   free(row_pointers);
 
   fclose(fp);

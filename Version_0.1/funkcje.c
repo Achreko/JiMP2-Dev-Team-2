@@ -158,17 +158,17 @@ void process_file(int w,int k,int array[][k]) {
   bit_depth = 8;
   color_type = PNG_COLOR_TYPE_GRAY;
 
-  row_pointers = (png_bytep*) malloc(sizeof(png_bytep) * w);
+  row_pointers = (png_bytep*) malloc(sizeof(png_bytep) *w);
   for (y=0; y<w; y++)
-    row_pointers[y] = (png_byte*) malloc(sizeof(png_byte) * k);
+    row_pointers[y] = (png_byte*) malloc(sizeof(png_byte) *k);
 
   for (y=0; y<w; y++) {
     png_byte* row = row_pointers[y];
     for (x=0; x<k; x++) {
-       if(array[y][x] == 0)
+	   if(array[y][x] == 0) 
       row[x] =   0;
-       else
-           row[x] = 255;
+	   else
+		   row[x] = 255;
     }
   }
 
@@ -179,8 +179,8 @@ void generacja_cyklu(int w,int k,int t1[][k],int t2[][k],int n){
     for(int h=0;h<n;h++){
         file_name(file,h);
         generuj_jedna_plansze(w,k,t1,t2);
-    process_file(w,k,t1);
-    write_png_file(file,w,k);
+	process_file(w,k,t1);
+	write_png_file(file,w,k);
         przepisz(w,k,t1,t2);
     }
 }

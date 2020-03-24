@@ -13,4 +13,3 @@ funkcje.o:	funkcje.c $(HEADERS)
 
 clean:
 	rm *.o
-	rm *.png
