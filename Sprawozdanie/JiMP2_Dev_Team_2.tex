@@ -2,6 +2,7 @@
 \usepackage[polish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -54,5 +55,39 @@ Plik Makefile, o którym była mowa wcześniej zawiera 2 reguły, które kompilu
 \\
 Wynikiem działania programu są pliki nazwie Gen[x].png , gdzie x jest numerem generacji.
 
+\section{Testy}
+Na początku przechodzimy do folderu $Version_1.0$, w którym znajduje się nasz program. W terminal wprowadzamy komendę $make$, która pozwoli przekompilować program. Program wywoływany jest za pomocą: $Game_of_Life$, dodatkowo należy po $./Game_of_Life$ dodać nazwę pliku, na podstawie którego mają być generowane plansze. Nie podanie pliku lub podanie pliku, który istnieje spowoduje błąd i nasz program zakończy pracę. Jeśli program wywołamy prawidłowo spyta on nas ile planszy chcemy wygenerować.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{wywolanie.png}
+	\caption{użycie $make$ i wywoływanie programu}
+\end{figure}
+
+\newpage Możemy potem łatwo zobaczyć, że program wygenerował pliki (w tym przykładzie 22). Dodatkowo na $Rysunku 2$ widać pliki z rozszerzeniem $*.o$, które stworzył $Makefile$.\\
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{nowe_pliki.png}
+	\caption{utworzone pliki}
+	
+	\end{figure}
+
+Na koniec możemy wyczyścić nasz folder z wygenerowanych plansz i plików wykonywalnych ($*.o$) za pomocą komendy $make$ $clean$.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{clean.png}
+	\caption{$make$ $clean$}
+	\end{figure}
+\newpage	
+\section{Pliki png}
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{png.png}
+	\caption{plik $png$}
+	\label{fig:png1}
+\end{figure}
+Na Rysunku 4 można zauważyć, że wygenerowany plik $png$ jest bardzo mały, z tego względu trzeba oglądać go w powiększeniu (Rysunek 5).\\
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{powiekszenie.png}
+	\caption{Plik $png$ w powiększeniu}
+\end{figure}
 
 \end{document}
