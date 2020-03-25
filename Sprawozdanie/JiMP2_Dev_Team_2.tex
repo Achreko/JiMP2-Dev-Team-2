@@ -38,7 +38,7 @@ $./GameofLife$ $twojplikzdanymi.txt.$
 Program przechowuje planszę w tablicy dwuwymiarowej. Tworzone są 2 tablice. Jedna z nich używana jest do wprowadzania zmian w generacji, a druga służy do porównywania sąsiedztwa komórki w celu wprowadzenia zmian w pierwszej tablicy.
 
 \section{Funkcjonowanie programu}
-
+Program podzielono na dwa pliki $main.c$ i $funkcje.c$ oraz na plik nagłówkowy $funkcje.h$. Pierwszy z plików odpowiada za otwarcie pliku oraz wywołanie funkcji zawartych w drugim pliku.
 Kolejne etapy działania programu:
 \\
 1.	Pobranie danych z pliku i zapisanie ich do tablic.
@@ -56,7 +56,7 @@ Plik Makefile, o którym była mowa wcześniej zawiera 2 reguły, które kompilu
 Wynikiem działania programu są pliki nazwie Gen[x].png , gdzie x jest numerem generacji.
 
 \section{Testy}
-Na początku przechodzimy do folderu $Version_1.0$, w którym znajduje się nasz program. W terminal wprowadzamy komendę $make$, która pozwoli przekompilować program. Program wywoływany jest za pomocą: $Game_of_Life$, dodatkowo należy po $./Game_of_Life$ dodać nazwę pliku, na podstawie którego mają być generowane plansze. Nie podanie pliku lub podanie pliku, który istnieje spowoduje błąd i nasz program zakończy pracę. Jeśli program wywołamy prawidłowo spyta on nas ile planszy chcemy wygenerować.
+Na początku przechodzimy do folderu $Version_1.0$, w którym znajduje się nasz program. W terminal wprowadzamy komendę $make$, która pozwoli przekompilować program. Program wywoływany jest za pomocą: $GameofLife$, dodatkowo należy po $./GameofLife$ dodać nazwę pliku, na podstawie którego mają być generowane plansze. Nie podanie pliku lub podanie pliku, który istnieje spowoduje błąd i nasz program zakończy pracę. Jeśli program wywołamy prawidłowo spyta on nas ile planszy chcemy wygenerować.
 
 \begin{figure}[h!]
 	\includegraphics[width=\linewidth]{wywolanie.png}
@@ -89,5 +89,11 @@ Na Rysunku 4 można zauważyć, że wygenerowany plik $png$ jest bardzo mały, z
 	\includegraphics[width=\linewidth]{powiekszenie.png}
 	\caption{Plik $png$ w powiększeniu}
 \end{figure}
+
+
+\section{Napotkane problemy}
+Trudności w projekcie można było podzielić na dwie części: programistyczne i środowiskowe. Pierwsze dotyczyły samego napisania kodu wykonującego schemat gry w życie i dający wynik w formacie $*.png$. Drugie natomiast miały związek z obsługą Githuba, wyborem środowiska programistycznego, instalacją i konfiguracją LaTeXa. Istotą trudności projektu według mnie nie była część programistyczna, ponieważ tutaj mieliśmy już potrzebne narzędzia i tylko musieliśmy ich użyć. Natomiast druga część wymagała od nas odrobiny samodzielności i umiejętności radzenia sobie z nowymi przeszkodami.
+
+
 
 \end{document}
